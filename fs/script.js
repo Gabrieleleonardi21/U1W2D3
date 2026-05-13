@@ -266,6 +266,15 @@ console.log(`Più basso: ${piuBasso.name} (${piuBasso.height} cm)`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(nomi.length);
+for (let i = nomi.length - 1; i >= 0; i--) {
+  for (let j = 0; j < personaggiFemminili.length; j++) {
+    nomi.splice(i, 1);
+    break;
+  }
+}
+console.log(nomi.length);
+console.log(nomi);
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
