@@ -177,6 +177,9 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
     case "blue-gray":
       perColoreOcchi["blue-gray"].push(character);
       break;
+    case "red":
+      perColoreOcchi.red.push(character);
+      break;
   }
 }
 console.log(perColoreOcchi);
