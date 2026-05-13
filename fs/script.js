@@ -227,6 +227,13 @@ console.log(classificazione);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot";
+  }
+}
+
+console.log(starWarsCharacters);
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
@@ -235,7 +242,23 @@ console.log(classificazione);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let piuAlto = starWarsCharacters[0];
+let piuBasso = starWarsCharacters[0];
 
+for (let i = 1; i < starWarsCharacters.length; i++) {
+  const altezza = Number(starWarsCharacters[i].height);
+
+  if (altezza > Number(piuAlto.height)) {
+    piuAlto = starWarsCharacters[i];
+  }
+
+  if (altezza < Number(piuBasso.height)) {
+    piuBasso = starWarsCharacters[i];
+  }
+}
+
+console.log(`Più alto: ${piuAlto.name} (${piuAlto.height} cm)`);
+console.log(`Più basso: ${piuBasso.name} (${piuBasso.height} cm)`);
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
    Quando combaciano per nome, rimuovi quel nome da nomi con splice.
