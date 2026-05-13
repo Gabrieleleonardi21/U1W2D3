@@ -188,6 +188,13 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let massaTotale1 = 0;
+let i = 0;
+while (i < starWarsCharacters.length) {
+  massaTotale1 += Number(starWarsCharacters[i].mass);
+  i++;
+}
+console.log(`Massa totale dell'equipaggio ${massaTotale1} kg`);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
@@ -199,6 +206,20 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let massaTotale = 2000;
+let classificazione;
+if (massaTotale < 500) {
+  classificazione = `Carico leggero`;
+} else if (massaTotale <= 700) {
+  classificazione = `Carico medio`;
+} else if (massaTotale <= 900) {
+  classificazione = `attenzione: oltre 700`;
+} else if (massaTotale <= 1000) {
+  classificazione = `Carico critico`;
+} else {
+  classificazione = `PERICOLO: sovraccarico`;
+}
+console.log(classificazione);
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
