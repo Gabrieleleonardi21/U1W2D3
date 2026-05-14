@@ -191,39 +191,36 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let massaTotale1 = 0;
+let massaTotale = 0;
 let i = 0;
 while (i < starWarsCharacters.length) {
-  massaTotale1 += Number(starWarsCharacters[i].mass);
+  massaTotale += Number(starWarsCharacters[i].mass);
   i++;
 }
-console.log(`Massa totale dell'equipaggio ${massaTotale1} kg`);
+console.log(`Massa totale dell'equipaggio ${massaTotale} kg`);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
    < 500            → "Carico leggero"
    500 – 700        → "Carico medio"
    700 – 900        → "Attenzione: oltre 700"
-   900 – 1000       → "Carico critico"
+   900 – 1000       → "Carico critico" 
    > 1000           → "PERICOLO: sovraccarico"
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let massaTotale = 2000;
-let classificazione;
-if (massaTotale < 500) {
-  classificazione = `Carico leggero`;
-} else if (massaTotale <= 700) {
-  classificazione = `Carico medio`;
-} else if (massaTotale <= 900) {
-  classificazione = `attenzione: oltre 700`;
-} else if (massaTotale <= 1000) {
-  classificazione = `Carico critico`;
-} else {
-  classificazione = `PERICOLO: sovraccarico`;
-}
-console.log(classificazione);
 
+if (massaTotale < 500) {
+  console.log(`Carico leggero`);
+} else if (massaTotale <= 700) {
+  console.log(`Carico medio`);
+} else if (massaTotale <= 900) {
+  console.log(`attenzione: oltre 700`);
+} else if (massaTotale <= 1000) {
+  console.log(`Carico critico`);
+} else {
+  console.log(`PERICOLO: sovraccarico`);
+}
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
    Stampa l'array.
@@ -248,7 +245,7 @@ console.log(starWarsCharacters);
 let piuAlto = starWarsCharacters[0];
 let piuBasso = starWarsCharacters[0];
 
-for (let i = 1; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   const altezza = Number(starWarsCharacters[i].height);
 
   if (altezza > Number(piuAlto.height)) {
@@ -270,10 +267,11 @@ console.log(`Più basso: ${piuBasso.name} (${piuBasso.height} cm)`);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(nomi.length);
-for (let i = nomi.length - 1; i >= 0; i--) {
+for (let i = 0; i < nomi.length; i++) {
   for (let j = 0; j < personaggiFemminili.length; j++) {
-    nomi.splice(i, 1);
-    break;
+    if (nomi[i] === personaggiFemminili[j].nome) {
+      nomi.splice(i, 1);
+    }
   }
 }
 console.log(nomi.length);
@@ -294,3 +292,6 @@ console.log(nomi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (const colore in perColoreOcchi) {
+  console.log(`${colore}: ${perColoreOcchi[colore].length} personaggi`);
+}
